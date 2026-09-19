@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Chatbot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <div class="chat-container">
+    <header class="chat-header">
+      <div class="header-info">
+        <div class="bot-avatar">🤖</div>
+        <div>
+          <h1>Support Assistant</h1>
+          <p class="status"><span class="status-dot"></span>Online</p>
+        </div>
+      </div>
+      <button id="reset-btn" title="Start a new conversation">New Chat</button>
+    </header>
+
+    <main id="chat-window" class="chat-window">
+      <!-- Messages are inserted here by script.js -->
+      <div class="message bot-message">
+        <div class="bubble">
+          Hi! 👋 I'm your virtual support assistant. Ask me about your
+          account, our services, payments, refunds, or how to contact us.
+        </div>
+      </div>
+    </main>
+
+    <div id="typing-indicator" class="typing-indicator hidden">
+      <span></span><span></span><span></span>
+    </div>
+
+    <form id="chat-form" class="chat-input-area" autocomplete="off">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Type your question here..."
+        maxlength="500"
+        required
+      />
+      <button type="submit" id="send-btn" aria-label="Send message">
+        ➤
+      </button>
+    </form>
+    <p id="error-message" class="error-message hidden"></p>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
